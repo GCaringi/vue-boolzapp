@@ -14,7 +14,7 @@
 
 body{
     height: 100vh;
-    background: linear-gradient(180deg, rgba(0,150,136,1) 20%, rgba(219,219,210,1) 20%);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(219,219,210,1) 15%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +30,8 @@ body{
 
 .contact-list{
     width: 30%;
+    display: flex;
+    flex-direction: column;
 }
 
 .chat-box{
@@ -38,10 +40,76 @@ body{
 
 .sec-head{
     height: 70px;
-    background-color: #EAEAEA;
+    background-color: #E6DFD6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.user-img{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    column-gap: 10px;
+    margin-left: 10px;
+}
 
+.user-btn{
+    margin-right: 15px;
+}
+
+.notify-request{
+    background-color: #8EDAFC;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+/*------------ 
+    BUTTONS
+--------------*/
+.btn_cs{
+    background-color: transparent;
+    border: none;
+    color: #B1B1B1;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+/*------------ 
+      TYPO
+--------------*/
+
+.btn_cs{
+    font-size: 1.25rem;
+}
+
+.notify-text a{
+    color: #4F7485;
+}
 .header--contact-list{
-    border-right: 1px solid black;
+    border-right: 1px solid #D6D6D6;
+}
+
+/*-----------
+    THUMBS 
+-----------*/
+
+.user-img img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.notify-img i{
+    background-color: #F2FBFF;
+    color: #8EDAFC;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    text-align: center;
+    line-height: 50px;
+    margin: 0px 10px 0px 20px;
 }
