@@ -211,6 +211,10 @@ body{
       TYPO
 --------------*/
 
+body{
+    font-family: 'Lato', sans-serif;
+}
+
 .btn_cs{
     font-size: 1.25rem;
 }
