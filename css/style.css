@@ -1,4 +1,4 @@
-/*----------
+/*-----------
     RESET 
 ------------*/
 
@@ -8,3 +8,40 @@
     box-sizing: border-box;
 }
 
+/*-------------- 
+    CONTAINERS
+----------------*/
+
+body{
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(0,150,136,1) 20%, rgba(219,219,210,1) 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    margin: auto ;
+    width: 1440px;
+    height: 95vh;
+    background-color: lightgray;
+}
+
+.contact-list{
+    width: 30%;
+}
+
+.chat-box{
+    width: 70%;
+}
+
+.sec-head{
+    height: 70px;
+    background-color: #EAEAEA;
+}
+
+
+.header--contact-list{
+    border-right: 1px solid black;
+}
