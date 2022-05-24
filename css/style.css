@@ -29,14 +29,17 @@ body{
 }
 
 .contact-list{
+    background-color: #fff;
     width: 30%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #D6D6D6;
+    border-right: 1px solid #B1B1B1;
 }
 
 .chat-box{
     width: 70%;
+    height: 100%;
 }
 
 .sec-head{
@@ -72,6 +75,29 @@ body{
     display: flex;
     background-color: #FAFAFA;
     padding: 5px 8px;
+}
+
+.chat-list-box{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    list-style: none;
+    overflow: scroll;
+}
+
+.chat-list-box li{
+    display: flex;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.user-info{
+    margin-left: 20px;
+}
+
+.msg-hour{
+    font-size: 12px;
+    margin-left: 35%;
 }
 /*------------ 
     BUTTONS
@@ -114,6 +140,14 @@ body{
     color: #4F7485;
 }
 
+.user-info small{
+    color: #B6B9BB;
+}
+
+.chat-list-box li{
+    background-color: #fff;   
+}
+
 /*-----------
     THUMBS 
 -----------*/
@@ -121,6 +155,12 @@ body{
 .user-img img{
     width: 100%;
     border-radius: 50%;
+}
+
+.chat-list-box .user-img{
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .notify-img i{
