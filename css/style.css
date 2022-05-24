@@ -44,7 +44,7 @@ body{
 
 .sec-head{
     height: 70px;
-    background-color: #E6DFD6;
+    background-color: #EAEAEA;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,6 +99,27 @@ body{
     font-size: 12px;
     margin-left: 35%;
 }
+
+.chat{
+    background-image: url("../img/mine.jpg");
+    height: calc(100% - 140px);
+}
+
+.user-chat-tools{
+    background-color: #F3EEEA;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#msg-send{
+    flex-grow: 1;
+    margin: 0px 25px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 10px;
+}
 /*------------ 
     BUTTONS
 --------------*/
@@ -116,6 +137,18 @@ body{
     margin: 0px;
 }
 
+.btn_cs_mic, .btn_cs_emoji{
+    font-size: 24px !important;
+}
+
+.btn_cs_emoji{
+    margin-left: 50px;
+}
+
+.btn_cs_mic{
+    margin-right: 50px;
+
+}
 
 /*---------- 
     INPUT
