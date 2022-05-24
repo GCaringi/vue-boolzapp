@@ -29,13 +29,13 @@
                         <button class="btn_cs"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
                 </div>
-                <div class="notify-request">
+                <div class="notify-request" v-show= "this.showNotify">
                     <div class="notify-img">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
                     <div class= "notify-text">
                         <p>Ricevi notifiche di nuovi messaggi</p>
-                        <a href="#">Attiva notifiche desktop</a>
+                        <a href="#" @click = "showNotifys()">Attiva notifiche desktop</a>
                     </div>
                 </div>
                 <div class="search-bar">
@@ -65,8 +65,11 @@
                 <div class="sec-head header--chat-box">
                     <div class="user-active">
                         <div class="user-img">
-                            <img src="./img/avatar_io.jpg" alt="My avatar">
-                            <span>Sofia</span>
+                            <img src="./img/avatar_1.jpg" alt="My avatar">
+                        </div>
+                        <div class="user-info">
+                            <h5>Michele</h5>
+                            <small>Ultimo accesso oggi alle 12:00</small>
                         </div>
                     </div>
                     <div class="user-btn">
@@ -76,13 +79,37 @@
                     </div>
                 </div>
                 <div class="chat">
-
+                    <div class="chat-container">
+                        <div class="msg msg--sended">
+                            <div class="text-wrapper tw-sended">
+                                Hai portato a spasso il cane
+                                <div class="hour-send">
+                                    <small>12:00</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msg msg--sended">
+                            <div class="text-wrapper tw-sended">
+                                Hai portato a spasso il cane
+                                <div class="hour-send">
+                                    <small>12:00</small>             
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msg msg--received">
+                            <div class="text-wrapper tw-received">
+                                Tutto fatto
+                                <div class="hour-send">
+                                    <small>12:00</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="user-chat-tools">
                     <button class="btn_cs btn_cs_emoji"><i class="fa-solid fa-face-meh"></i></button>
                     <input type="text" name="message" id="msg-send" placeholder="Inserisci il tuo messaggio">
                     <button class="btn_cs btn_cs_mic"><i class="fa-solid fa-microphone"></i></button>
-                    
                 </div>
             </div>
         </div>

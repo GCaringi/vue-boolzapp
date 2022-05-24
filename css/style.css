@@ -91,8 +91,9 @@ body{
     padding: 5px 0px;
 }
 
-.user-info{
-    margin-left: 20px;
+.user-active{
+    display: flex;
+    align-items: center;
 }
 
 .msg-hour{
@@ -103,7 +104,50 @@ body{
 .chat{
     background-image: url("../img/mine.jpg");
     height: calc(100% - 140px);
+    display: flex;
+    justify-content: center;
 }
+
+.chat-container{
+    width: 80%;
+    margin-top: 10px;
+}
+
+.msg{
+    width: 100%;
+    display: flex;
+    margin: 5px 0px;
+}
+
+.msg--sended{
+    justify-content: flex-end;
+}
+
+.msg--received{
+    justify-content: flex-start;
+}
+
+.text-wrapper{
+    position: relative;
+    border-radius: 10px;
+    padding: 15px 100px 15px 20px;
+}
+
+.tw-sended{
+    background-color: #D5F9BA;
+}
+
+.tw-received{
+    background-color: #fff;
+}
+
+.hour-send{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    font-size: x-small;
+}
+
 
 .user-chat-tools{
     background-color: #F3EEEA;
@@ -173,13 +217,14 @@ body{
     color: #4F7485;
 }
 
-.user-info small{
+.user-info small, .msg-hour, .hour-send{
     color: #B6B9BB;
 }
 
 .chat-list-box li{
     background-color: #fff;   
 }
+
 
 /*-----------
     THUMBS 
@@ -188,6 +233,10 @@ body{
 .user-img img{
     width: 100%;
     border-radius: 50%;
+}
+
+.user-img{
+    margin-right: 20px;
 }
 
 .chat-list-box .user-img{
@@ -206,4 +255,8 @@ body{
     text-align: center;
     line-height: 50px;
     margin: 0px 10px 0px 20px;
+}
+
+.chat-list-box li:hover{
+    background-color: #E9EBEB;
 }
