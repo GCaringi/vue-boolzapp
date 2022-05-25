@@ -193,7 +193,6 @@ const app = new Vue({
         addMessage(){
             const now = new Date();
             let hour = now.getHours() + ":" +now.getMinutes() + ":" + now.getSeconds();
-            console.log(hour);
             const newMessageObj = {
                 date : '10/01/2020 ' + hour,
                 message: this.newMessage,
@@ -204,7 +203,6 @@ const app = new Vue({
             setTimeout(() => {
                 const newNow = new Date();
                 hour = newNow.getHours() + ":" +newNow.getMinutes() + ":" + newNow.getSeconds();
-                console.log(hour);
                 const reply = {
                     date : '10/01/2020 ' + hour,
                     message: "OK",
