@@ -179,6 +179,9 @@ const app = new Vue({
             newStr = newStr.split(" ").splice(1).join().split(":");
             newStr = newStr[0] + ":" +  newStr[1]
             return newStr;
-        }
+        },
+        messageLastIndex(arr){
+            return arr.length-1;
+        },
     },
 })

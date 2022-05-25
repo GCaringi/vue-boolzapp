@@ -56,10 +56,10 @@
                         </div>
                         <div class="user-info">
                             <h3>{{user.name}}</h3>
-                            <small>Ultimo messaggio inviato</small>
+                            <small>Ultimo messaggio {{getHour(user.messages[messageLastIndex(user.messages)].date)}}</small>
                         </div>
                         <div class="msg-hour">
-                            12:00
+                            {{getHour(user.messages[messageLastIndex(user.messages)].date)}}
                         </div>
                     </li>
                 </ul>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="user-info">
                             <h5>{{contacts[currentContact].name}}</h5>
-                            <small>Ultimo accesso oggi alle 12</small>
+                            <small>Ultimo accesso oggi alle {{getHour(contacts[currentContact].messages[messageLastIndex(contacts[currentContact].messages)].date)}}</small>
                         </div>
                     </div>
                     <div class="user-btn">
