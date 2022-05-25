@@ -144,6 +144,13 @@ body{
     background-color: #fff;
 }
 
+.chevron-menu{
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
 .hour-send{
     position: absolute;
     bottom: 0px;
@@ -188,7 +195,10 @@ body{
 
 .btn_cs_mic{
     margin-right: 50px;
+}
 
+.btn_cs_chevron i{
+    font-size: 14px;
 }
 
 /*---------- 
@@ -268,4 +278,13 @@ body{
 
 .chat-list-box li:hover{
     background-color: #E9EBEB;
+}
+
+
+/*------------
+    EFFECTS 
+--------------*/
+
+.text-wrapper:hover .chevron-menu{
+    display: block;
 }

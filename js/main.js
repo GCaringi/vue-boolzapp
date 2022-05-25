@@ -5,6 +5,7 @@ const app = new Vue({
         currentContact: 0,
         showNotify: true,
         filter: "",
+        messageMenuShow: false,
         contacts: [
     {
         name: 'Michele',
