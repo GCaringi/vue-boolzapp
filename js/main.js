@@ -170,8 +170,11 @@ const app = new Vue({
     ]
     },
     methods: {
-        showNotifys(){
+        notShowNotifys(){
             this.showNotify = false;
+        },
+        toggleNotify(){
+            this.showNotify = !this.showNotify;
         },
         changeUser(obj){
             this.currentContact = this.contacts.indexOf(obj);

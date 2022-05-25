@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="user-btn">
-                        <button class="btn_cs"><i class="fa-solid fa-circle-notch"></i></button>
+                        <button class="btn_cs" @click = toggleNotify()><i class="fa-solid fa-circle-notch"></i></button>
                         <button class="btn_cs"><i class="fa-solid fa-message"></i></button>
                         <button class="btn_cs"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
@@ -40,7 +40,7 @@
                     </div>
                     <div class= "notify-text">
                         <p>Ricevi notifiche di nuovi messaggi</p>
-                        <a href="#" @click = "showNotifys()">Attiva notifiche desktop</a>
+                        <a href="#" @click = "notShowNotifys()">Attiva notifiche desktop</a>
                     </div>
                 </div>
                 <div class="search-bar">
