@@ -118,7 +118,7 @@ body{
 .msg{
     width: 100%;
     display: flex;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 .msg--sended{
@@ -159,13 +159,7 @@ body{
     justify-content: space-between;
 }
 
-#msg-send{
-    flex-grow: 1;
-    margin: 0px 25px;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 10px;
-}
+
 /*------------ 
     BUTTONS
 --------------*/
@@ -206,6 +200,13 @@ body{
     border: 1px solid #F5F5F5;
 }
 
+#msg-send{
+    flex-grow: 1;
+    margin: 0px 25px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 10px;
+}
 
 /*------------ 
       TYPO
@@ -221,6 +222,7 @@ body{
 
 .notify-text a{
     color: #4F7485;
+    font-size: smaller;
 }
 
 .user-info small, .msg-hour, .hour-send{

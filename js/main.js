@@ -1,6 +1,7 @@
 const app = new Vue({
     el: "#app",
     data: {
+        currentContact: 0,
         showNotify: true,
         contacts: [
     {
@@ -170,6 +171,9 @@ const app = new Vue({
         showNotifys(){
             console.log("ENTRO")
             this.showNotify = false;
-        }
+        },
+        changeUser(obj){
+            this.currentContact = this.contacts.indexOf(obj);
+        },
     },
 })

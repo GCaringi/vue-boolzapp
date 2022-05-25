@@ -50,7 +50,7 @@
                     <input type="text" name="search-chat" id="find-bar" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <ul class="chat-list-box">
-                    <li v-for = "(user, index) in contacts">
+                    <li v-for = "(user, index) in contacts" @click = "changeUser(user)">
                         <div class="user-img">
                             <img :src="'./img/avatar' + user.avatar+ '.jpg'" alt="Avatar_1">
                         </div>
@@ -84,16 +84,19 @@
                     </div>
                 </div>
                 <div class="chat">
-                    <div class="chat-container">
-                        <div class="msg msg--sended">
+                    <div class="chat-container" >
+                        <div class="msg" v-for = "(chat,index) in contacts[currentContact].messages">
+
                             <div class="text-wrapper tw-sended">
-                                Hai portato a spasso il cane
+                                {{chat.message}}
                                 <div class="hour-send">
                                     <small>12:00</small>
                                 </div>
                             </div>
                         </div>
-                        <div class="msg msg--sended">
+
+
+                        <!-- <div class="msg msg--sended">
                             <div class="text-wrapper tw-sended">
                                 Hai portato a spasso il cane
                                 <div class="hour-send">
@@ -108,7 +111,9 @@
                                     <small>12:00</small>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+
+
                     </div>
                 </div>
                 <div class="user-chat-tools">
