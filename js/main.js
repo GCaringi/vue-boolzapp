@@ -4,6 +4,7 @@ const app = new Vue({
         newMessage: "",
         currentContact: 0,
         showNotify: true,
+        filter: "",
         contacts: [
     {
         name: 'Michele',
@@ -191,6 +192,7 @@ const app = new Vue({
             return arr.length-1;
         },
         addMessage(){
+            const temporanyIndex = this.currentContact;
             const now = new Date();
             let hour = now.getHours() + ":" +now.getMinutes() + ":" + now.getSeconds();
             const newMessageObj = {
@@ -198,7 +200,7 @@ const app = new Vue({
                 message: this.newMessage,
                 status: 'sent'
             }
-            this.contacts[this.currentContact].messages.push(newMessageObj);
+            this.contacts[temporanyIndex].messages.push(newMessageObj);
             this.newMessage = "";
             setTimeout(() => {
                 const newNow = new Date();
@@ -208,8 +210,24 @@ const app = new Vue({
                     message: "OK",
                     status: 'received'
                 }
-                this.contacts[this.currentContact].messages.push(reply);
-            },10000);
+                this.contacts[temporanyIndex].messages.push(reply);
+            },2000);
+        },
+        filtList(array){
+            if (this.filter === ""){
+                array.forEach(element => {
+                    element.visible = true;
+                });
+                this.filter = "";
+                return;
+            }
+
+            array.forEach(element => {
+                if (!element.name.includes(this.filter)){
+                    element.visible = false
+                }
+            })
+            this.filter = "";
         }
     },
     computed: {

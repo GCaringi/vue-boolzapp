@@ -44,13 +44,14 @@
                     </div>
                 </div>
                 <div class="search-bar">
-                    <button class="btn_cs btn_cs_search">
+                    <button class="btn_cs btn_cs_search" @click = filtList(contacts)>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                    <input type="text" name="search-chat" id="find-bar" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" name="search-chat" id="find-bar" placeholder="Cerca o inizia una nuova chat"
+                            v-model = "filter" @keyup.enter = "filtList(contacts)">
                 </div>
                 <ul class="chat-list-box">
-                    <li v-for = "(user, index) in contacts" v-show = "user.visible" @click = "changeUser(user)">
+                    <li v-for = "user in contacts" v-show = "user.visible" @click = "changeUser(user)">
                         <div class="user-img">
                             <img :src="'./img/avatar' + user.avatar+ '.jpg'" alt="Avatar_1">
                         </div>
@@ -74,7 +75,7 @@
                         </div>
                         <div class="user-info">
                             <h5>{{contacts[currentContact].name}}</h5>
-                            <small>Ultimo massaggio inviato{{getHour(contacts[currentContact].messages[messageLastIndex(contacts[currentContact].messages)].date)}}</small>
+                            <small>Ultimo massaggio inviato {{getHour(contacts[currentContact].messages[messageLastIndex(contacts[currentContact].messages)].date)}}</small>
                         </div>
                     </div>
                     <div class="user-btn">
