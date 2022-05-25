@@ -90,7 +90,7 @@
                             <div  class="text-wrapper" :class = "{'tw-sended' : chat.status === 'sent' , 'tw-received' : chat.status === 'received'}">
                                 {{chat.message}}
                                 <div class="hour-send">
-                                    <small>12:00</small>
+                                    <small>{{getHour(chat.date)}}</small>
                                 </div>
                             </div>
                         </div>

@@ -169,12 +169,16 @@ const app = new Vue({
     },
     methods: {
         showNotifys(){
-            console.log("ENTRO")
             this.showNotify = false;
         },
         changeUser(obj){
             this.currentContact = this.contacts.indexOf(obj);
         },
-        lastElem: () => {return this.contacts.messages[this.messages.length-1].data;}
+        getHour(str){
+            let newStr = str;
+            newStr = newStr.split(" ").splice(1).join().split(":");
+            newStr = newStr[0] + ":" +  newStr[1]
+            return newStr;
+        }
     },
 })
