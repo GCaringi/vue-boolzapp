@@ -224,9 +224,10 @@ const app = new Vue({
                 this.filter = "";
                 return;
             }
-
+            this.filter = this.filter.toLowerCase();
             array.forEach(element => {
-                if (!element.name.includes(this.filter)){
+                let tmp = element.name.toLowerCase();
+                if (!tmp.includes(this.filter)){
                     element.visible = false
                 }
             })
