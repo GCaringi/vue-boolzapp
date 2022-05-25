@@ -175,5 +175,6 @@ const app = new Vue({
         changeUser(obj){
             this.currentContact = this.contacts.indexOf(obj);
         },
+        lastElem: () => {return this.contacts.messages[this.messages.length-1].data;}
     },
 })

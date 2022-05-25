@@ -73,8 +73,8 @@
                             <img src="./img/avatar_1.jpg" alt="My avatar">
                         </div>
                         <div class="user-info">
-                            <h5>Michele</h5>
-                            <small>Ultimo accesso oggi alle 12:00</small>
+                            <h5>{{contacts[currentContact].name}}</h5>
+                            <small>Ultimo accesso oggi alle 12</small>
                         </div>
                     </div>
                     <div class="user-btn">
@@ -85,9 +85,9 @@
                 </div>
                 <div class="chat">
                     <div class="chat-container" >
-                        <div class="msg" v-for = "(chat,index) in contacts[currentContact].messages">
-
-                            <div class="text-wrapper tw-sended">
+                        <div class="msg" v-for = "(chat,index) in contacts[currentContact].messages"
+                            :class = "{'msg--sended' : chat.status === 'sent'}">
+                            <div  class="text-wrapper" :class = "{'tw-sended' : chat.status === 'sent' , 'tw-received' : chat.status === 'received'}">
                                 {{chat.message}}
                                 <div class="hour-send">
                                     <small>12:00</small>
