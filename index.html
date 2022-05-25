@@ -50,13 +50,13 @@
                     <input type="text" name="search-chat" id="find-bar" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <ul class="chat-list-box">
-                    <li v-for = "(user, index) in contacts" @click = "changeUser(user)">
+                    <li v-for = "(user, index) in contacts" v-show = "user.visible" @click = "changeUser(user)">
                         <div class="user-img">
                             <img :src="'./img/avatar' + user.avatar+ '.jpg'" alt="Avatar_1">
                         </div>
                         <div class="user-info">
                             <h3>{{user.name}}</h3>
-                            <small>Ultimo messaggio {{getHour(user.messages[messageLastIndex(user.messages)].date)}}</small>
+                            <small>Ultimo messaggio inviato</small>
                         </div>
                         <div class="msg-hour">
                             {{getHour(user.messages[messageLastIndex(user.messages)].date)}}
@@ -74,7 +74,7 @@
                         </div>
                         <div class="user-info">
                             <h5>{{contacts[currentContact].name}}</h5>
-                            <small>Ultimo accesso oggi alle {{getHour(contacts[currentContact].messages[messageLastIndex(contacts[currentContact].messages)].date)}}</small>
+                            <small>Ultimo massaggio inviato{{getHour(contacts[currentContact].messages[messageLastIndex(contacts[currentContact].messages)].date)}}</small>
                         </div>
                     </div>
                     <div class="user-btn">
@@ -94,31 +94,12 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <!-- <div class="msg msg--sended">
-                            <div class="text-wrapper tw-sended">
-                                Hai portato a spasso il cane
-                                <div class="hour-send">
-                                    <small>12:00</small>             
-                                </div>
-                            </div>
-                        </div>
-                        <div class="msg msg--received">
-                            <div class="text-wrapper tw-received">
-                                Tutto fatto
-                                <div class="hour-send">
-                                    <small>12:00</small>
-                                </div>
-                            </div>
-                        </div> -->
-
-
                     </div>
                 </div>
                 <div class="user-chat-tools">
                     <button class="btn_cs btn_cs_emoji"><i class="fa-solid fa-face-meh"></i></button>
-                    <input type="text" name="message" id="msg-send" placeholder="Inserisci il tuo messaggio">
+                    <input type="text" name="message" id="msg-send" placeholder="Inserisci il tuo messaggio"
+                            v-model = "newMessage" @keyup.enter = "addMessage()">
                     <button class="btn_cs btn_cs_mic"><i class="fa-solid fa-microphone"></i></button>
                 </div>
             </div>

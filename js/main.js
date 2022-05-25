@@ -1,6 +1,7 @@
 const app = new Vue({
     el: "#app",
     data: {
+        newMessage: "",
         currentContact: 0,
         showNotify: true,
         contacts: [
@@ -175,13 +176,45 @@ const app = new Vue({
             this.currentContact = this.contacts.indexOf(obj);
         },
         getHour(str){
-            let newStr = str;
-            newStr = newStr.split(" ").splice(1).join().split(":");
-            newStr = newStr[0] + ":" +  newStr[1]
+            let tmp = str;
+            let newStr;
+            tmp = tmp.split(" ").splice(1).join().split(":");
+            newStr = tmp[0] + ":";
+            if (tmp[1].length === 1){
+                newStr+= "0" + tmp[1]
+            }else{
+                newStr+= tmp[1];
+            }
             return newStr;
         },
         messageLastIndex(arr){
             return arr.length-1;
         },
+        addMessage(){
+            const now = new Date();
+            let hour = now.getHours() + ":" +now.getMinutes() + ":" + now.getSeconds();
+            console.log(hour);
+            const newMessageObj = {
+                date : '10/01/2020 ' + hour,
+                message: this.newMessage,
+                status: 'sent'
+            }
+            this.contacts[this.currentContact].messages.push(newMessageObj);
+            this.newMessage = "";
+            setTimeout(() => {
+                const newNow = new Date();
+                hour = newNow.getHours() + ":" +newNow.getMinutes() + ":" + newNow.getSeconds();
+                console.log(hour);
+                const reply = {
+                    date : '10/01/2020 ' + hour,
+                    message: "OK",
+                    status: 'received'
+                }
+                this.contacts[this.currentContact].messages.push(reply);
+            },10000);
+        }
     },
+    computed: {
+        
+    }
 })
