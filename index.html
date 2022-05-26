@@ -102,9 +102,9 @@
                                     <small>{{getHour(chat.date)}}</small>
                                 </div>
                                 <button class="btn_cs btn_cs_chevron" @click = "toggleMenu(chat)"><i class="fa-solid fa-chevron-down"></i></button>
-                                <div class="chevron-menu">
-                                    <button>Message Info</button>
-                                    <button @click = "removeMessage(contacts[currentContact], index)">Rimuovi messaggio</button>
+                                <div class="chevron-menu" v-show="chat.openMenu">
+                                    <button class="btn_cs_chevron_option" >Message Info</button>
+                                    <button class= "btn_cs_chevron_option" @click = "removeMessage(contacts[currentContact], index)">Rimuovi messaggio</button>
                                 </div>
                             </div>
                         </div>
