@@ -82,7 +82,7 @@ body{
     flex-direction: column;
     justify-items: center;
     list-style: none;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .chat-list-box li{
@@ -106,7 +106,7 @@ body{
     height: calc(100% - 140px);
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .chat-container{
@@ -146,9 +146,15 @@ body{
 
 .chevron-menu{
     display: none;
+    flex-direction: column;
     position: absolute;
     top: 0px;
     right: 5px;
+}
+
+.option-menu{
+    display: flex;
+    flex-direction: column;
 }
 
 .hour-send{
@@ -198,6 +204,9 @@ body{
 }
 
 .btn_cs_chevron i{
+    position: absolute;
+    top: 5px;
+    right: 10px;
     font-size: 14px;
 }
 
@@ -286,5 +295,5 @@ body{
 --------------*/
 
 .text-wrapper:hover .chevron-menu{
-    display: block;
+    display: flex;
 }

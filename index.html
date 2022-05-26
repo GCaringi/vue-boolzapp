@@ -59,7 +59,10 @@
                             <h3>{{user.name}}</h3>
                             <small>Ultimo messaggio inviato</small>
                         </div>
-                        <div class="msg-hour">
+                        <div v-if = "user.messages.length === 0" class="msg-hour">
+                            ...
+                        </div>
+                        <div v-else class="msg-hour">
                             {{getHour(user.messages[messageLastIndex(user.messages)].date)}}
                         </div>
                     </li>
@@ -75,7 +78,12 @@
                         </div>
                         <div class="user-info">
                             <h5>{{contacts[currentContact].name}}</h5>
-                            <small>Ultimo massaggio inviato {{getHour(contacts[currentContact].messages[messageLastIndex(contacts[currentContact].messages)].date)}}</small>
+                            <div v-if = "contacts[currentContact].messages.length === 0">
+                                <small>Ultimo massaggio inviato ...</small>
+                            </div>
+                            <div v-else>
+                                <small>Ultimo massaggio inviato {{getHour(contacts[currentContact].messages[messageLastIndex(contacts[currentContact].messages)].date)}}</small>
+                            </div>
                         </div>
                     </div>
                     <div class="user-btn">
@@ -87,14 +95,16 @@
                 <div class="chat">
                     <div class="chat-container" >
                         <div class="msg" v-for = "(chat,index) in contacts[currentContact].messages"
-                            :class = "{'msg--sended' : chat.status === 'sent'}">
-                            <div  class="text-wrapper" :class = "{'tw-sended' : chat.status === 'sent' , 'tw-received' : chat.status === 'received'}">
+                        :class = "{'msg--sended' : chat.status === 'sent'}">
+                            <div class="text-wrapper" :class = "{'tw-sended' : chat.status === 'sent' , 'tw-received' : chat.status === 'received'}" @mouseleave = "hideMenu(chat)">
                                 {{chat.message}}
                                 <div class="hour-send">
                                     <small>{{getHour(chat.date)}}</small>
                                 </div>
+                                <button class="btn_cs btn_cs_chevron" @click = "toggleMenu(chat)"><i class="fa-solid fa-chevron-down"></i></button>
                                 <div class="chevron-menu">
-                                    <button class="btn_cs btn_cs_chevron"><i class="fa-solid fa-chevron-down"></i></button>
+                                    <button>Message Info</button>
+                                    <button @click = "removeMessage(contacts[currentContact], index)">Rimuovi messaggio</button>
                                 </div>
                             </div>
                         </div>

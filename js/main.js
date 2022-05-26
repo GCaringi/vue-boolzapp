@@ -15,17 +15,20 @@ const app = new Vue({
             {
                 date: '10/01/2020 15:30:55',
                 message: 'Hai portato a spasso il cane?',
-                status: 'sent'
+                status: 'sent',
+                openMenu: false
             },
             {
                 date: '10/01/2020 15:50:00',
                 message: 'Ricordati di stendere i panni',
-                status: 'sent'
+                status: 'sent',
+                openMenu: false
             },
             {
                 date: '10/01/2020 16:15:22',
                 message: 'Tutto fatto!',
-                status: 'received'
+                status: 'received',
+                openMenu: false
             }
         ],
     },
@@ -123,7 +126,7 @@ const app = new Vue({
                 status: 'received'
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: '10/01/2020 15:57:00',
                 message: 'Nessuna nuova, buona nuova',
                 status: 'sent'
             }
@@ -167,7 +170,7 @@ const app = new Vue({
                     status: 'received'
                 }
             ],
-        }
+        },
     ]
     },
     methods: {
@@ -200,7 +203,7 @@ const app = new Vue({
             const now = new Date();
             let hour = now.getHours() + ":" +now.getMinutes() + ":" + now.getSeconds();
             const newMessageObj = {
-                date : '10/01/2020 ' + hour,
+                date : 'xx/xx/xxxx ' + hour,
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -233,6 +236,16 @@ const app = new Vue({
                 }
             })
             this.filter = "";
+        },
+        toggleMenu(obj){
+            obj.openMenu = !obj.openMenu;
+        },
+        hideMenu(obj){
+            obj.openMenu = false;
+        },
+        removeMessage(obj, index){
+            console.log(obj)
+            obj.messages.splice(index,1);
         }
     },
     computed: {
