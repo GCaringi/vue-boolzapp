@@ -217,13 +217,18 @@ const app = new Vue({
             return arr.length-1;
         },
         addMessage(){
+            if (this.newMessage.trim() === ''){
+                this.newMessage = "";
+                return;
+            }
             const temporanyIndex = this.currentContact;
             const now = new Date();
             let hour = now.getHours() + ":" +now.getMinutes() + ":" + now.getSeconds();
             const newMessageObj = {
                 date : 'xx/xx/xxxx ' + hour,
                 message: this.newMessage,
-                status: 'sent'
+                status: 'sent',
+                openMenu: false
             }
             this.contacts[temporanyIndex].messages.push(newMessageObj);
             this.newMessage = "";
@@ -233,7 +238,8 @@ const app = new Vue({
                 const reply = {
                     date : '10/01/2020 ' + hour,
                     message: "OK",
-                    status: 'received'
+                    status: 'received',
+                    openMenu: false
                 }
                 this.contacts[temporanyIndex].messages.push(reply);
             },2000);

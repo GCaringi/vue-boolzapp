@@ -98,7 +98,8 @@ body{
 
 .msg-hour{
     font-size: 12px;
-    margin-left: 35%;
+    margin-left: auto;
+    margin-right: 10px;
 }
 
 .chat{

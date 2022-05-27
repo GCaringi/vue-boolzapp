@@ -57,7 +57,10 @@
                         </div>
                         <div class="user-info">
                             <h3>{{user.name}}</h3>
-                            <small>Ultimo messaggio inviato</small>
+                            <small v-if = "user.messages.length === 0" >
+                               Ultimo messaggio inviato
+                            </small>
+                            <small v-else >{{user.messages[messageLastIndex(user.messages)].message}}</small>
                         </div>
                         <div v-if = "user.messages.length === 0" class="msg-hour">
                             ...
